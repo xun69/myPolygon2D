@@ -1,0 +1,243 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2puqc13sijma"]
+
+[ext_resource type="Script" path="res://addons/myPolygon2D/ui.gd" id="1_r4rfj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o10k0"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.376471, 0.643137, 0.741176, 1)
+
+[node name="ui" type="MarginContainer"]
+offset_top = 211.0
+offset_right = 389.0
+offset_bottom = 211.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_r4rfj")
+
+[node name="ui" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_o10k0")
+text = "myPolygon2D"
+
+[node name="HBox" type="HBoxContainer" parent="ui"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ui/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "形状"
+
+[node name="ShapTypeOpt" type="OptionButton" parent="ui/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+selected = 0
+popup/item_0/text = "矩形"
+popup/item_0/id = 0
+popup/item_1/text = "正多边形"
+popup/item_1/id = 1
+popup/item_2/text = "圆形"
+popup/item_2/id = 2
+popup/item_3/text = "扇形"
+popup/item_3/id = 3
+popup/item_4/text = "星形"
+popup/item_4/id = 4
+
+[node name="Tab" type="TabContainer" parent="ui"]
+unique_name_in_owner = true
+layout_mode = 2
+tabs_visible = false
+
+[node name="Rect" type="GridContainer" parent="ui/Tab"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Label3" type="Label" parent="ui/Tab/Rect"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "宽度"
+
+[node name="RectWidthSpin" type="SpinBox" parent="ui/Tab/Rect"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+value = 50.0
+
+[node name="Label4" type="Label" parent="ui/Tab/Rect"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "高度"
+
+[node name="RectHeightSpin" type="SpinBox" parent="ui/Tab/Rect"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+value = 50.0
+
+[node name="RegularPolygon" type="GridContainer" parent="ui/Tab"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Label3" type="Label" parent="ui/Tab/RegularPolygon"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "边数"
+
+[node name="RegularEdgesSpin" type="SpinBox" parent="ui/Tab/RegularPolygon"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 3.0
+value = 3.0
+
+[node name="Label4" type="Label" parent="ui/Tab/RegularPolygon"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "半径"
+
+[node name="RegularRadiusSpin" type="SpinBox" parent="ui/Tab/RegularPolygon"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+value = 50.0
+
+[node name="Label5" type="Label" parent="ui/Tab/RegularPolygon"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "起始角度"
+
+[node name="RegularStartAngleSpin" type="SpinBox" parent="ui/Tab/RegularPolygon"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 360.0
+
+[node name="Circle" type="GridContainer" parent="ui/Tab"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Label4" type="Label" parent="ui/Tab/Circle"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "半径"
+
+[node name="CircleRadiusSpin" type="SpinBox" parent="ui/Tab/Circle"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+value = 50.0
+
+[node name="Sector" type="GridContainer" parent="ui/Tab"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Label6" type="Label" parent="ui/Tab/Sector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "起始角度"
+
+[node name="SectorStartAngleSpin" type="SpinBox" parent="ui/Tab/Sector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -360.0
+max_value = 360.0
+
+[node name="Label7" type="Label" parent="ui/Tab/Sector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "结束角度"
+justification_flags = 161
+
+[node name="SectorEndAngleSpin" type="SpinBox" parent="ui/Tab/Sector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -360.0
+max_value = 360.0
+value = 90.0
+
+[node name="Label4" type="Label" parent="ui/Tab/Sector"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "半径"
+
+[node name="SectorRadiusSpin" type="SpinBox" parent="ui/Tab/Sector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+value = 50.0
+
+[node name="Star" type="GridContainer" parent="ui/Tab"]
+layout_mode = 2
+columns = 2
+
+[node name="Label6" type="Label" parent="ui/Tab/Star"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "起始角度"
+
+[node name="StarStartAngleSpin" type="SpinBox" parent="ui/Tab/Star"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -360.0
+max_value = 360.0
+
+[node name="Label8" type="Label" parent="ui/Tab/Star"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "边数"
+
+[node name="StarEdgesSpin" type="SpinBox" parent="ui/Tab/Star"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 3.0
+value = 5.0
+
+[node name="Label9" type="Label" parent="ui/Tab/Star"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "半径"
+
+[node name="StarRadius1Spin" type="SpinBox" parent="ui/Tab/Star"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+value = 50.0
+
+[node name="Label10" type="Label" parent="ui/Tab/Star"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "半径2"
+
+[node name="StarRadius2Spin" type="SpinBox" parent="ui/Tab/Star"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+value = 25.0
+
+[node name="applyBtn" type="Button" parent="ui"]
+layout_mode = 2
+text = "应用"
+
+[connection signal="item_selected" from="ui/HBox/ShapTypeOpt" to="." method="_on_shap_type_opt_item_selected"]
+[connection signal="pressed" from="ui/applyBtn" to="." method="_on_apply_btn_pressed"]
